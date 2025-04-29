@@ -1,5 +1,5 @@
-package seminar3.test.modelTest;
+package modelTest;
 
-public class ModelTest {
+public class ReceiptTest {
     
 }

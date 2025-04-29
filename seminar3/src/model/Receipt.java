@@ -1,3 +1,7 @@
-public class Model {
-    
+package model;
+
+public class Receipt {
+    public Receipt(Sale sale) {
+        
+    }
 }

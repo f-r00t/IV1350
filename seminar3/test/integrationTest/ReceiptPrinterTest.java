@@ -1,5 +1,5 @@
 package integrationTest;
 
-public class IntegrationTest {
+public class ReceiptPrinterTest {
     
 }

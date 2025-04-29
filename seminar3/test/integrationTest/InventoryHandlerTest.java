@@ -1,5 +1,5 @@
-package seminar3.test.integrationTest;
+package integrationTest;
 
-public class IntegrationTest {
+public class InventoryHandlerTest {
     
 }

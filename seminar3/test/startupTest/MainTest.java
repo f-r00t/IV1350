@@ -1,5 +1,5 @@
-package seminar3.test.startupTest;
+package startupTest;
 
-public class StartupTest {
+public class MainTest {
     
 }

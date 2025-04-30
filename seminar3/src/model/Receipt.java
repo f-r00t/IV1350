@@ -22,6 +22,10 @@ public class Receipt {
 
     }
 
+    public float getChange(){
+        return change;
+    }
+
     public void print() {
         String date = new java.text.SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(new java.util.Date (timestamp));
         System.out.println("------------- Begin Receipt -------------");

@@ -13,8 +13,8 @@ public class Sale {
 
     public void addItem(ItemDTO item, int quantity) {
         items.put(item, items.getOrDefault(item, 0) + quantity);
-        totalPrice += item.getPrice();
-        totalVAT += item.getPrice() * item.getTaxRate();
+        totalPrice += item.getPrice() * quantity;
+        totalVAT += item.getPrice() * item.getTaxRate() * quantity;
     }
 
     public void applyDiscount(float discount) {

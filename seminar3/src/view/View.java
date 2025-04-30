@@ -30,7 +30,7 @@ public class View {
             String itemInput = scanner.nextLine();
             if (itemInput == "") {
                 activeSale = false;
-                System.out.printf("Total cost is %.0f %n Enter amount receieved: %n", controller.currentSale.getTotalPrice());
+                System.out.printf("Total cost is %.0f SEK %n%nEnter amount receieved: %n", controller.currentSale.getTotalPrice());
                 String paymentInput = scanner.nextLine();
                 float amountReceived = Float.valueOf(paymentInput);
                 float change = controller.makePayment(amountReceived);
@@ -43,7 +43,6 @@ public class View {
                 ItemDTO currentItem = controller.scanItem(itemID);
                 printItem(currentItem);
             }
-            
         }
     }
     

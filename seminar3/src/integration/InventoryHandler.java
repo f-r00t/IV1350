@@ -5,8 +5,8 @@ import java.util.Map;
 
 public class InventoryHandler {
 
-    Map<Integer, ItemDTO> inventoryList = new HashMap<>();
-    Map<Integer, Integer> inventoryStock = new HashMap<>();
+    private Map<Integer, ItemDTO> inventoryList = new HashMap<>();
+    private Map<Integer, Integer> inventoryStock = new HashMap<>();
 
     public InventoryHandler() {
 
@@ -36,6 +36,10 @@ public class InventoryHandler {
 
     private void updateQuantity(Integer identifier, int amount) {
         inventoryStock.put(identifier, inventoryStock.get(identifier) - amount);
-    } 
+    }
+
+    public int getStockLevel(Integer itemIdentifier) {
+        return inventoryStock.get(itemIdentifier);
+    }
 
 }

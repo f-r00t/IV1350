@@ -3,11 +3,15 @@ package controller;
 import integration.AccountingHandler;
 import integration.DiscountHandler;
 import integration.InventoryHandler;
-import integration.ReceiptPrinter;
 import integration.ItemDTO;
+import integration.ReceiptPrinter;
 import model.CashRegister;
-import model.Sale;
 import model.Receipt;
+import model.Sale;
+
+/**
+ * Controller class
+ */
 
 public class Controller {
     InventoryHandler inventoryHandler;
@@ -29,28 +33,61 @@ public class Controller {
         return scanItem(identifier, 1);
     }
 
+    /**
+     * Scans an item and adds it to the current sale.
+     *
+     * @param identifier the ID for the scanned item
+     * @param quantity the quantity of the scannned item
+     * @return the scanned item
+     */
+
     public ItemDTO scanItem(int identifier, int quantity) {
         ItemDTO item = inventoryHandler.getItem(identifier);
         this.currentSale.addItem(item, quantity);
         return item;
     }
 
+    /**
+     * @return The total price (excluding VAT)
+     */
+
     public float getTotalPrice() {
         return currentSale.getTotalPrice();
     }
+
+    /**
+     * @return The total VAT
+     */
 
     public float getTotalVAT() {
         return currentSale.getTotalVAT();
     }
     
+    /**
+     * Applies a discount to the current sale if the specified customer is eligible.
+     *
+     * @param customerID the ID of the current customer
+     */
+
     public void addDiscount(int customerId) {
-        float discount = discountHandler.getDiscount(customerId, this.currentSale);
+        float discount = discountHandler.getDiscount(customerId);
         this.currentSale.applyDiscount(discount);
     }    
+
+    /**
+     * Starts a new sale by creating a new Sale instance
+     */
 
     public void startSale() {
         this.currentSale = new Sale();
     }
+
+    /**
+     * Ends the sale by updating the external systems (inventory and accounting), printing a receipt and clearing the current sale
+     *
+     * @param amountPaid The amount paid by the customer.
+     * @return A receipt representing the completed transaction.
+     */
 
     public Receipt endSale(float amountPaid) {
         this.accountingHandler.registerSale(currentSale);

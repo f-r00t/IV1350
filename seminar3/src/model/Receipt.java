@@ -1,11 +1,12 @@
 package model;
 
-import java.util.HashMap;
 import java.util.Map;
-
 import integration.ItemDTO;
 
-
+/**
+ * Represents a receipt for a completed sale. Contains information about the sale,
+ * the amount paid, change given, and timestamp of the transaction.
+ */
 public class Receipt {
 
     private long timestamp;
@@ -13,19 +14,32 @@ public class Receipt {
     private float amountPaid;
     private float change;
 
+    /**
+     * Constructs a {@code Receipt} for a completed sale.
+     *
+     * @param thisSale    The {@code Sale} object representing the completed transaction.
+     * @param amountPaid  The amount of money paid by the customer.
+     */
     public Receipt(Sale thisSale, float amountPaid) {
-
         this.sale = thisSale;
         this.timestamp = System.currentTimeMillis();
         this.amountPaid = amountPaid;
         this.change = amountPaid - sale.getTotalPrice();
-
     }
 
-    public float getChange(){
+    /**
+     * Returns the amount of change to be given to the customer.
+     *
+     * @return The change as a float.
+     */
+    public float getChange() {
         return change;
     }
 
+    /**
+     * Prints the receipt details to the console, including items, prices,
+     * total cost, VAT, payment, change, and timestamp.
+     */
     public void print() {
         String date = new java.text.SimpleDateFormat("dd/MM/yyyy HH:mm:ss").format(new java.util.Date (timestamp));
         System.out.println("------------- Begin Receipt -------------");

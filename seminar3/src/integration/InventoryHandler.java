@@ -3,6 +3,11 @@ package integration;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Handles the external inverntory system.
+ * Contains methods for updating and retrieving information from the inventory database.
+ */
+
 public class InventoryHandler {
 
     private Map<Integer, ItemDTO> inventoryList = new HashMap<>();
@@ -22,10 +27,23 @@ public class InventoryHandler {
     
     }
 
+    /**
+     * Retrieves item details from its identifier.
+     *
+     * @param identifier The item ID.
+     * @return The {@code ItemDTO} for the specified item, or {@code null} if not found.
+     */
+
     public ItemDTO getItem(int identifier) {
         return inventoryList.get(identifier);
     }
     
+    /**
+     * Updates the inventory stock by subtracting the sold quantities from current amount in stock.
+     *
+     * @param items A map of items and their sold quantities.
+     */
+
     public void updateInventory(Map<ItemDTO, Integer> items) {
         for (Map.Entry<ItemDTO, Integer> entry : items.entrySet()) {
             ItemDTO item = entry.getKey();
@@ -34,9 +52,23 @@ public class InventoryHandler {
         }
     }
 
+    /**
+     * Decreases the stock amount for a specific item.
+     *
+     * @param identifier The item ID.
+     * @param amount The quantity of the item.
+     */
+
     private void updateQuantity(Integer identifier, int amount) {
         inventoryStock.put(identifier, inventoryStock.get(identifier) - amount);
     }
+
+    /**
+     * Retrieves the current stock level of an item.
+     *
+     * @param itemIdentifier The item ID.
+     * @return The current quantity in stock.
+     */
 
     public int getStockLevel(Integer itemIdentifier) {
         return inventoryStock.get(itemIdentifier);

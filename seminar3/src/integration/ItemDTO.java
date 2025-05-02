@@ -1,5 +1,10 @@
 package integration;
 
+/**
+ * Represents a Data Transfer Object (DTO) for an item in the inventory.
+ * Contains basic information such as name, price, tax rate, and description.
+ */
+
 public class ItemDTO {
     private int identifier;
     private String name;
@@ -15,26 +20,45 @@ public class ItemDTO {
         this.description = description;
     }
 
+    /** 
+     * @return The price of the item (excluding VAT).
+     */
     public float getPrice() {
         return price;
     }
 
+    /**
+     * @return The VAT rate of the item.
+     */
     public float getTaxRate() {
         return taxRate;
     }
 
+    /**
+     * @return The name of the item.
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * @return The item ID.
+     */
     public int getIdentifier() {
         return identifier;
     }
 
+    /**
+     * @return The item description.
+     */
     public String getDescription() {
         return description;
     }
 
+    /**
+     * Prints the details of the item to the console.
+     * Mainly intended for debugging or demonstration purposes.
+     */
     public void print() {
         
         System.out.println("");

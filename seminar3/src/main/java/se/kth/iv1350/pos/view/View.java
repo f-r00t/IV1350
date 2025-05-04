@@ -52,11 +52,22 @@ public class View {
                 int itemID = Integer.valueOf(itemInput);
                 ItemDTO thisItem = controller.scanItem(itemID);
                 System.out.println("Add 1 item with item id " + thisItem.getIdentifier() + " :");
-                thisItem.print();
+                displayItemDetails(thisItem);
                 System.out.printf("Total cost: %.2f SEK%n", controller.getTotalPrice());
                 System.out.printf("Total VAT: %.2f SEK%n", controller.getTotalVAT());
             }
         }
+    }
+    /**
+     * Prints information about an item.
+     * @param item The item to be printed.
+     */
+    private void displayItemDetails(ItemDTO item) {
+        System.out.println("\nItem ID: " + item.getIdentifier());
+        System.out.println("Item name: " + item.getName());
+        System.out.println("Item cost: " + item.getPrice() + " SEK");
+        System.out.println("VAT: " + (item.getTaxRate() * 100) + "%");
+        System.out.println("Item description: " + item.getDescription() + "\n");
     }
 
 }

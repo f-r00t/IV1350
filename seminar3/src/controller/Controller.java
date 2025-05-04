@@ -10,7 +10,7 @@ import model.Receipt;
 import model.Sale;
 
 /**
- * Controller class
+ * Controller class, handles communication between view and model.
  */
 
 public class Controller {
@@ -20,6 +20,10 @@ public class Controller {
     DiscountHandler discountHandler;
     CashRegister cashRegister;
     private Sale currentSale;
+
+    /**
+     * Constructs and initializes the {@code Controller}.
+     */
 
     public Controller() {
         inventoryHandler = new InventoryHandler();

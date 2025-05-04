@@ -13,6 +13,10 @@ public class InventoryHandler {
     private Map<Integer, ItemDTO> inventoryList = new HashMap<>();
     private Map<Integer, Integer> inventoryStock = new HashMap<>();
 
+    /**
+     * Constructs and initializes the {@code InventoryHandler}.
+     */
+
     public InventoryHandler() {
 
         ItemDTO apple = new ItemDTO(1, "Granny Smith Apple", 9.99f, 0.12f, "The freshest apple known to man.");

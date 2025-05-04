@@ -7,11 +7,20 @@ import model.Receipt;
 import java.util.Scanner;
 
 
+/**
+ * View class, handles interaction with the user.
+ */
+
 public class View {
 
     private Controller controller;
     private Boolean activeSale;
     Scanner scanner = new Scanner(System.in);
+
+    /**
+     * Constructs and initializes the {@code View} aswell as starts a new sale.
+     * @param contr The controller to interact with application logic.
+     */
 
     public View(Controller contr) {
 
@@ -20,6 +29,11 @@ public class View {
         controller.startSale();
 
     }
+
+    /**
+     * Simulates the process of scanning items via user input.
+     * The user enters item identifiers one at a time. An empty entry finalize the sale, asks for payment and prints a receipt.
+     */
 
     public void scanItems() {
 

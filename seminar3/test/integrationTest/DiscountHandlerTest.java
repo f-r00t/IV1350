@@ -20,13 +20,13 @@ public class DiscountHandlerTest {
 
     @Test
     public void testGetDiscountKnownCustomer() {
-        float discount = discountHandler.getDiscount(1, dummySale);
+        float discount = discountHandler.getDiscount(1);
         assertEquals(0.15f, discount, 0.0001);
     }
 
     @Test
     public void testGetDiscountMultipleKnownCustomers() {
-        assertEquals(0.1f, discountHandler.getDiscount(2, dummySale), 0.0001);
-        assertEquals(0.5f, discountHandler.getDiscount(3, dummySale), 0.0001);
+        assertEquals(0.1f, discountHandler.getDiscount(2), 0.0001);
+        assertEquals(0.5f, discountHandler.getDiscount(3), 0.0001);
     }
 }

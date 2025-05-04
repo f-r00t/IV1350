@@ -1,9 +1,13 @@
 package model;
 
 public class CashRegister {
-    private float  balance;
+    private float balance;
 
     public void addMoney(float amountPaid) {
         balance += amountPaid;
+    }
+
+    public float getBalance() {
+        return balance;
     }
 }

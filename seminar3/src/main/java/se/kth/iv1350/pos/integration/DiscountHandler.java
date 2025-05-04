@@ -13,6 +13,11 @@ public class DiscountHandler {
 
     Map<Integer, Float> discounts = new HashMap<>();
 
+    /**
+     * Constructs and initializes {@code DiscountHandler}
+     *
+     */
+
     public DiscountHandler() {
 
         discounts.put(1, 0.15f);

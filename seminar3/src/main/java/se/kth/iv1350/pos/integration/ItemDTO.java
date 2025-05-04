@@ -12,6 +12,17 @@ public class ItemDTO {
     private float taxRate;
     private String description;
 
+    /**
+     * Constructs an {@code ItemDTO}.
+     * Holds basic information about an item.
+     * 
+     * @param identifier Unique identifier for the item
+     * @param name Name of the item
+     * @param price Price of the item (exluding VAT)
+     * @param taxRate VAT rate of item
+     * @param description Description of item
+     */
+
     public ItemDTO(int identifier, String name, float price, float taxRate, String description) {
         this.identifier = identifier;
         this.name = name;

@@ -48,7 +48,6 @@ public class Controller {
     public ItemDTO scanItem(int identifier, int quantity) {
         ItemDTO item = inventoryHandler.getItem(identifier);
         this.currentSale.addItem(item, quantity);
-        item.print();
         return item;
     }
 

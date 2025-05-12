@@ -36,10 +36,15 @@ public class InventoryHandler {
      *
      * @param identifier The item ID.
      * @return The {@code ItemDTO} for the specified item, or {@code null} if not found.
+     * @throws ItemNotFoundException if the item wasn't found in the database.
      */
 
-    public ItemDTO getItem(int identifier) {
-        return inventoryList.get(identifier);
+    public ItemDTO getItem(int identifier) throws ItemNotFoundException {
+        ItemDTO item = inventoryList.get(identifier);
+        if (item == null) {
+            throw new ItemNotFoundException(identifier);
+        }
+        return item;
     }
     
     /**

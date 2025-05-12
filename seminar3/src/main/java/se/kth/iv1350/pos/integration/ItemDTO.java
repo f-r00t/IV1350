@@ -65,20 +65,4 @@ public class ItemDTO {
     public String getDescription() {
         return description;
     }
-
-    /**
-     * Prints the details of the item to the console.
-     * Mainly intended for debugging or demonstration purposes.
-     */
-    public void print() {
-        
-        System.out.println("");
-        System.out.println("Item ID : " + this.getIdentifier());
-        System.out.println("Item name : " + this.getName());
-        System.out.println("Item cost : " + this.getPrice() + " SEK");
-        System.out.println("VAT : " + this.getTaxRate() * 100 + "%");
-        System.out.println("Item description: " + this.getDescription());
-        System.out.println("");
-    
-    }
 }

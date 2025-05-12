@@ -1,0 +1,5 @@
+☐ Add newSale method
+✔ Add update inventory method (to reduce stock) @done(25-05-04 13:03)
+☐ Add mock accounting methods
+☐ Add test to make sure same product scans are entered into the same entity (with increased quantity)
+☐ Maybe use stringbuilder like in the book chapter 6 for receipts?

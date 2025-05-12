@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"All Packages","u":"allpackages-index.html"},{"l":"main.java.se.kth.iv1350.pos.controller"},{"l":"main.java.se.kth.iv1350.pos.integration"},{"l":"main.java.se.kth.iv1350.pos.model"},{"l":"main.java.se.kth.iv1350.pos.startup"},{"l":"main.java.se.kth.iv1350.pos.view"}];updateSearchResults();

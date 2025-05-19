@@ -47,12 +47,13 @@ public class View {
 
             System.out.print("Enter item identifier: ");
             String itemInput = scanner.nextLine();
+            System.out.print("\n");
             if (itemInput.isEmpty()) {
                 activeSale = false;
 
-                System.out.printf("Enter customer ID for discount (or leave blank): %n");
+                System.out.printf("Enter customer ID for discount (or 0 to skip): %n");
                 int discountID = Integer.valueOf(scanner.nextLine());
-                if(!itemInput.isEmpty()) {
+                if(discountID != 0) {
                     controller.addDiscount(discountID);
                 }
 
@@ -79,7 +80,7 @@ public class View {
                     System.out.println("Add 1 item with item id " + thisItem.getIdentifier() + " :");
                     displayItemDetails(thisItem);
                     System.out.printf("Total cost: %.2f SEK%n", controller.getTotalPrice());
-                    System.out.printf("Total VAT: %.2f SEK%n", controller.getTotalVAT());
+                    System.out.printf("Total VAT: %.2f SEK%n%n", controller.getTotalVAT());
                 } catch (ScanItemException e) {
                     System.out.println(e.getMessage());
                 }

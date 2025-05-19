@@ -1,9 +1,10 @@
 {
     "java.project.sourcePaths": [
         "main/java",
-        "test"
+        "test",
+        "src"
     ],
     "java.project.referencedLibraries": [
-        "lib/**/*.jar"
+        "c:\\Users\\isaco\\skola\\objektOrienteradDesign\\IV1350\\seminar4\\lib\\junit-platform-console-standalone-1.13.0-M3.jar"
     ]
 }

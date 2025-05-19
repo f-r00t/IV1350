@@ -29,13 +29,12 @@ public class Sale {
     }
 
     /**
-     * Applies a discount to the total price of the sale.
-     * The discount is expected to be a multiplier (e.g., 0.9 for 10% off).
+     * Applies a discount amount to the total price of the sale.
      *
-     * @param discount The discount factor to apply to the total price.
+     * @param discount The amount to substract from the total price.
      */
     public void applyDiscount(float discount) {
-        totalPrice = totalPrice * discount;
+        totalPrice -= discount;
     }
 
     /**

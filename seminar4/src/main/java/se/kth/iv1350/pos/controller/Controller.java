@@ -13,6 +13,9 @@ import main.java.se.kth.iv1350.pos.integration.ItemDTO;
 import main.java.se.kth.iv1350.pos.integration.ItemNotFoundException;
 import main.java.se.kth.iv1350.pos.integration.ReceiptPrinter;
 import main.java.se.kth.iv1350.pos.model.CashRegister;
+import main.java.se.kth.iv1350.pos.model.DiscountStrategy;
+import main.java.se.kth.iv1350.pos.model.PercentageStrategy;
+import main.java.se.kth.iv1350.pos.model.BonusCheckStrategy;
 import main.java.se.kth.iv1350.pos.model.Receipt;
 import main.java.se.kth.iv1350.pos.model.RevenueObserver;
 import main.java.se.kth.iv1350.pos.model.Sale;
@@ -84,15 +87,32 @@ public class Controller {
     }
     
     /**
-     * Applies a discount to the current sale if the specified customer is eligible.
+     * Applies a discount to the current sale according to
+     * the discount type if the specified customer is eligible.
      *
      * @param customerID the ID of the current customer
      */
-
     public void addDiscount(int customerId) {
-        float discount = discountHandler.getDiscount(customerId);
-        this.currentSale.applyDiscount(discount);
-    }   
+        float value = discountHandler.getDiscountValue(customerId);
+        String type = discountHandler.getDiscountType(customerId);
+
+        DiscountStrategy strategy;
+
+        switch (type) {
+            case "PERCENTAGE":
+                strategy = new PercentageStrategy();
+                break;
+            case "BONUS":
+                strategy = new BonusCheckStrategy();
+                break;
+            default:
+                strategy = new PercentageStrategy();
+                break;
+        }
+
+        currentSale.applyDiscount(strategy.calculateDiscount(currentSale, value));
+    }
+ 
 
     /**
      * Starts a new sale by creating a new Sale instance

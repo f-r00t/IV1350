@@ -49,6 +49,13 @@ public class View {
             String itemInput = scanner.nextLine();
             if (itemInput.isEmpty()) {
                 activeSale = false;
+
+                System.out.printf("Enter customer ID for discount (or leave blank): %n");
+                int discountID = Integer.valueOf(scanner.nextLine());
+                if(!itemInput.isEmpty()) {
+                    controller.addDiscount(discountID);
+                }
+
                 System.out.printf("Total cost is %.0f SEK %n%nEnter amount receieved: %n", controller.getTotalPrice());
                 String paymentInput = scanner.nextLine();
                 float amountReceived = Float.valueOf(paymentInput);

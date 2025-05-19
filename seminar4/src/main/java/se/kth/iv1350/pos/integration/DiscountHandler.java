@@ -1,9 +1,6 @@
 package main.java.se.kth.iv1350.pos.integration;
-import java.nio.IntBuffer;
 import java.util.HashMap;
 import java.util.Map;
-
-import main.java.se.kth.iv1350.pos.model.Sale;
 
 /**
  * Handles the discount database.

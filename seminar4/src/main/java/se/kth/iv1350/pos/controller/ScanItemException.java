@@ -16,7 +16,12 @@ public class ScanItemException extends Exception{
         super(generateMessage(cause), cause);
     }
     
-
+    /**
+     * Generates an appropriate message according to the original exception
+     * 
+     * @param cause The original cause of this exception
+     * @return the message to display to the user
+     */
     private static String generateMessage(Throwable cause) {
         if (cause instanceof ItemNotFoundException) {
             return "Item not found. Please try again or check the item ID.";

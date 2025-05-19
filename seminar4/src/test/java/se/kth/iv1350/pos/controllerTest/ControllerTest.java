@@ -1,4 +1,4 @@
-package controllerTest;
+package test.java.se.kth.iv1350.pos.controllerTest;
 
 import main.java.se.kth.iv1350.pos.controller.Controller;
 import main.java.se.kth.iv1350.pos.integration.DatabaseOfflineException;
@@ -57,15 +57,15 @@ public class ControllerTest {
     @Test
     public void testAddDiscount() {
         try {
-            controller.scanItem(3, 2);
+            controller.scanItem(2, 2);
         } catch (ScanItemException e) {
             fail("Exception was thrown: " + e.getMessage());
         }
         float totalBefore = controller.getTotalPrice();
-        controller.addDiscount(1);
+        controller.addDiscount(2);
         float totalAfter = controller.getTotalPrice();
         assertTrue(totalAfter < totalBefore);
-        assertEquals(totalBefore * 0.15f, totalAfter, 0.01);
+        assertEquals(totalBefore - 3f, totalAfter, 0.01);
     }
 
     @Test

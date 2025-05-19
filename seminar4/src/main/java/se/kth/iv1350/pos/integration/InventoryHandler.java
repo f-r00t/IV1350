@@ -2,7 +2,6 @@ package main.java.se.kth.iv1350.pos.integration;
 
 import java.util.HashMap;
 import java.util.Map;
-import main.java.se.kth.iv1350.pos.integration.ItemNotFoundException;
 import main.java.se.kth.iv1350.pos.util.LogHandler;
 
 /**

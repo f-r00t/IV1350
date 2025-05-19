@@ -1,4 +1,4 @@
-package integrationTest;
+package test.java.se.kth.iv1350.pos.integrationTest;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -21,13 +21,25 @@ public class DiscountHandlerTest {
 
     @Test
     public void testGetDiscountKnownCustomer() {
-        float discount = discountHandler.getDiscount(1);
+        float discount = discountHandler.getDiscountValue(1);
         assertEquals(0.15f, discount, 0.0001);
     }
 
     @Test
     public void testGetDiscountMultipleKnownCustomers() {
-        assertEquals(0.1f, discountHandler.getDiscount(2), 0.0001);
-        assertEquals(0.5f, discountHandler.getDiscount(3), 0.0001);
+        assertEquals(0.1f, discountHandler.getDiscountValue(2), 0.0001);
+        assertEquals(10f, discountHandler.getDiscountValue(3), 0.0001);
+    }
+
+    @Test
+    public void testGetDiscountTypeKnownCustomer() {
+        String discountType = discountHandler.getDiscountType(1);
+        assertEquals("PERCENTAGE", discountType);
+    }
+
+    @Test
+    public void testGetDiscountTypeMultipleKnownCustomers() {
+        assertEquals("PERCENTAGE", discountHandler.getDiscountType(2));
+        assertEquals("BONUS", discountHandler.getDiscountType(3));
     }
 }

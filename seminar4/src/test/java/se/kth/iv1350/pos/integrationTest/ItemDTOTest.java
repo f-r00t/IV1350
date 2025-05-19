@@ -1,4 +1,4 @@
-package integrationTest;
+package test.java.se.kth.iv1350.pos.integrationTest;
 
 import org.junit.jupiter.api.Test;
 

@@ -16,7 +16,7 @@ public class LogHandler {
     * Creates a new instance and also creates a new log file.
     * An existing log file will be deleted.
     */
-    public LogHandler() {
+    private LogHandler() {
         try {
             logStream = new PrintWriter(
             new FileWriter("log.txt"), true);
@@ -26,6 +26,12 @@ public class LogHandler {
         }
     }
 
+    /**
+     * Creates a new instance of LogHandler if one does not already exist,
+     * otherwise, return the existing one.
+     * 
+     * @return the instance of LogHandler created or found
+     */
     public static LogHandler getInstance() {
         if(INSTANCE == null) {
             INSTANCE = new LogHandler();

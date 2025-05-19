@@ -140,6 +140,11 @@ public class Controller {
         return receipt;
     }
 
+    /**
+     * Adds a new observer of the interface RevenueObserver
+     * 
+     * @param obs The observer to be added
+     */
     public void addRevenueObserver(RevenueObserver obs) {
         revenueObservers.add(obs);
     }

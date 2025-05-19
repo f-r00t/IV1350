@@ -1,4 +1,4 @@
-package modelTest;
+package test.java.se.kth.iv1350.pos.modelTest;
 
 import org.junit.jupiter.api.Test;
 

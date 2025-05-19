@@ -1,4 +1,4 @@
-package modelTest;
+package test.java.se.kth.iv1350.pos.modelTest;
 
 import org.junit.jupiter.api.Test;
 
@@ -28,7 +28,7 @@ public class SaleTest {
 
         sale.addItem(banana, 2);
 
-        sale.applyDiscount(0.8f);
+        sale.applyDiscount(2f);
 
         assertEquals(8.0f, sale.getTotalPrice(), 0.001);
     }

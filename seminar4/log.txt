@@ -1,1 +1,4 @@
-Item with ID 6 was not found in the inventory.
+Item with ID 7 was not found in the inventory.
+Item with ID 5 was not found in the inventory.
+The inventory database could not be contacted.
+Item with ID 11 was not found in the inventory.

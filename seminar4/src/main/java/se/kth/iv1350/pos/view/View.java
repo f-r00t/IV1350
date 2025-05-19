@@ -33,7 +33,7 @@ public class View {
         contr.addRevenueObserver(new TotalRevenueFileOutput());
     }
 
-    /**1
+    /**
      * Simulates the process of scanning items via user input.
      * The user enters item identifiers one at a time. An empty entry finalize the sale, asks for payment and prints a receipt.
      */

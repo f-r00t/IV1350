@@ -31,7 +31,7 @@ public class InventoryHandler {
         inventoryStock.put(1, 10);
         inventoryStock.put(2, 10);
         inventoryStock.put(3, 10);
-        logger = new LogHandler();
+        logger = LogHandler.getInstance();
     
     }
 

@@ -19,7 +19,6 @@ public class View {
 
     private Controller controller;
     private Boolean activeSale;
-    Scanner scanner = new Scanner(System.in);
 
     /**
      * Constructs and initializes the {@code View} aswell as starts a new sale.
@@ -39,7 +38,7 @@ public class View {
      */
 
     public void scanItems() {
-
+        Scanner scanner = new Scanner(System.in);
         this.activeSale = true;
         controller.startSale();
 
@@ -50,7 +49,6 @@ public class View {
             System.out.print("\n");
             if (itemInput.isEmpty()) {
                 activeSale = false;
-
                 System.out.printf("Enter customer ID for discount (or 0 to skip): %n");
                 int discountID = Integer.valueOf(scanner.nextLine());
                 if(discountID != 0) {

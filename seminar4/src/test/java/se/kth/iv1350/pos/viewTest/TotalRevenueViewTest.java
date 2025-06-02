@@ -18,11 +18,6 @@ class TotalRevenueViewTest {
         System.setOut(new PrintStream(outContent));
     }
 
-    @AfterEach
-    void tearDown() {
-        System.setOut(originalOut);
-    }
-
     @Test
     void testRegisterSale_PrintsConfirmationMessage() {
         

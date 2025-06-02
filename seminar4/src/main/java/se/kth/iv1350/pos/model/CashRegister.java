@@ -33,7 +33,7 @@ public class CashRegister {
      */
     private void notifyObservers() {
         for (RevenueObserver obs : revenueObservers) {
-            obs.newBalance(balance);
+            obs.newSaleWasMade(balance);
         }
     }
 

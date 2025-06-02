@@ -10,7 +10,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class TotalRevenueViewTest {
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-    private final PrintStream originalOut = System.out;
     private TotalRevenueView totalView = new TotalRevenueView();
 
     @BeforeEach
@@ -21,7 +20,6 @@ class TotalRevenueViewTest {
     @Test
     void PrintsRevenue() {
         
-        TotalRevenueView accountingHandler = new TotalRevenueView();
         float sum = 1000;
 
         totalView.newSaleWasMade(sum);

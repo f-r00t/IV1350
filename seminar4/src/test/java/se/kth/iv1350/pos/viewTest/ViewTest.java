@@ -10,8 +10,6 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ViewTest {
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-    private final PrintStream originalOut = System.out;
-    private final InputStream originalIn = System.in;
 
     private Controller controller = new Controller();;
     private View view = new View(controller);

@@ -15,7 +15,6 @@ public class MainTest {
 
     @Test
     void testMainCorrectlyStartsOutput() throws Exception {
-        PrintStream originalOut = System.out;
 
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outContent));
@@ -32,8 +31,6 @@ public class MainTest {
 
         future.cancel(true);
         executor.shutdownNow();
-
-        System.setOut(originalOut);
 
         String output = outContent.toString();
         assertTrue(output.contains("Enter item identifier:"), "Expected prompt not found in output.");

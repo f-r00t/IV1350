@@ -29,10 +29,10 @@ class TotalRevenueViewTest {
         TotalRevenueView accountingHandler = new TotalRevenueView();
         float sum = 1000;
 
-        totalView.newBalance(sum);
+        totalView.newSaleWasMade(sum);
 
         String output = outContent.toString().trim();
-        assertTrue(output.contains("Total revenue is now: 1000"), 
+        assertTrue(output.contains("Total revenue: 1000,00 SEK"), 
                    "Output should return new total revenue.");
     }
 }

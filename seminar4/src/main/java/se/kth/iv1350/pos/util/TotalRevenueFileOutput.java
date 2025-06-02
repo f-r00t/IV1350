@@ -4,15 +4,15 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import main.java.se.kth.iv1350.pos.model.RevenueObserver;
-
-public class TotalRevenueFileOutput implements RevenueObserver {
+/**
+ * Logs total revenue to a file using the Template Method pattern.
+ */
+public class TotalRevenueFileOutput extends RevenueObserverTemplate {
     private PrintWriter logStream;
 
     public TotalRevenueFileOutput() {
         try {
-            logStream = new PrintWriter(
-            new FileWriter("RevenueLog.txt"), true);
+            logStream = new PrintWriter(new FileWriter("RevenueLog.txt", true), true);
         } catch (IOException ioe) {
             System.out.println("CAN NOT LOG.");
             ioe.printStackTrace();
@@ -20,7 +20,16 @@ public class TotalRevenueFileOutput implements RevenueObserver {
     }
 
     @Override
-    public void newBalance(float total) {
-        logStream.println("The new total revenue is: " + total);
+    protected void doShowTotalIncome() throws IOException {
+        if (logStream != null) {
+            logStream.println("The new total revenue is: " + getTotalRevenue() + " SEK");
+        } else {
+            throw new IOException("Log stream is not initialized.");
+        }
+    }
+
+    @Override
+    protected void handleErrors(Exception e) {
+        System.err.println("Failed to log revenue to file: " + e.getMessage());
     }
 }

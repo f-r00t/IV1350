@@ -19,7 +19,7 @@ class TotalRevenueViewTest {
     }
 
     @Test
-    void testRegisterSale_PrintsConfirmationMessage() {
+    void PrintsRevenue() {
         
         TotalRevenueView accountingHandler = new TotalRevenueView();
         float sum = 1000;
